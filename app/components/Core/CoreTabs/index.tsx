@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import * as S from "./style";
 import { coreTabItems } from "@/app/utils/coreTabItems";
 import { Brightness1Icon } from "@/app/utils/icons";
+import { useGlobalState } from "@/app/hooks";
+import { BorderRight } from "@mui/icons-material";
 
 const CoreTabs = () => {
-  const [apertado, setApertado] = useState(false);
+  const { chosedMenuButton, setChosedMenuButton } = useGlobalState();
 
   return (
     <S.GridContainer textAlign="start">
@@ -15,16 +17,23 @@ const CoreTabs = () => {
             fullWidth
             startIcon={
               <Brightness1Icon
-                color="success"
+                color={chosedMenuButton === index ? "success" : undefined}
                 style={{ marginRight: "2rem" }}
               />
             }
             style={{
               color: "whitesmoke",
-              border: "1px solid green",
+              border:
+                chosedMenuButton === index
+                  ? "1px solid green"
+                  : "1px solid whitesmoke",
               justifyContent: "flex-start",
-              borderRight: "5px solid green",
+              borderRight:
+                chosedMenuButton === index
+                  ? "5px solid green"
+                  : "1px solid whitesmoke",
             }}
+            onClick={() => setChosedMenuButton(index)}
           >
             {menu.title}
           </Button>
