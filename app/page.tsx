@@ -1,9 +1,7 @@
-import Button from "./components/Button";
-
 export default function Home() {
   return (
     <main>
-      <Button />
+      <h1>Area principal</h1>
     </main>
   );
 }

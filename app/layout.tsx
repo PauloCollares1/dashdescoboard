@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "./components/Sidebar";
 import GlobalStyleProvider from "./providers/GlobalStyleProvider";
 import ContextProvider from "./providers/ContextProvider";
+import CoreMenu from "./components/CoreMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ContextProvider>
           <GlobalStyleProvider>
-            <Sidebar />
+            <CoreMenu />
             {children}
           </GlobalStyleProvider>
         </ContextProvider>
