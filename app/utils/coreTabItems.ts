@@ -1,22 +1,17 @@
 export const coreTabItems = [
   {
     id: 0,
-    title: "Sprint atual",
-    startIcon: "SendIcon",
+    title: "Sprint's",
+    pageLink: "/Pages/sprints",
   },
   {
     id: 1,
-    title: "Sprint Antiga",
-    startIcon: "SendIcon",
+    title: "Análises",
+    pageLink: "/Pages/analitics",
   },
   {
     id: 2,
-    title: "Sprint Antiga 2",
-    startIcon: "SendIcon",
-  },
-  {
-    id: 3,
-    title: "Sprint Antiga 3",
-    startIcon: "SendIcon",
+    title: "Metas",
+    pageLink: "/Pages/goals",
   },
 ];

@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import * as S from "./style";
+import CoreTabs from "../CoreTabs";
 import MenuAvatar from "../../Avatar";
 import { useGlobalState } from "@/app/hooks/index";
-import CoreTabs from "../CoreTabs";
 
 const CoreMenu = () => {
   const { theme } = useGlobalState();

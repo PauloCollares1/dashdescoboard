@@ -1,7 +1,9 @@
+import ModalTasks from "./components/Core/ModalTasks";
+
 export default function Home() {
   return (
     <main>
-      <h1>Area principal</h1>
+      <ModalTasks />
     </main>
   );
 }
