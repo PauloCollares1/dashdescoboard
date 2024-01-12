@@ -4,6 +4,7 @@ import "./globals.css";
 import GlobalStyleProvider from "./providers/GlobalStyleProvider";
 import ContextProvider from "./providers/ContextProvider";
 import CoreMenu from "./components/Core/CoreMenu";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,15 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ContextProvider>
-          <GlobalStyleProvider>
-            <CoreMenu />
-            {children}
-          </GlobalStyleProvider>
-        </ContextProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <ContextProvider>
+            <GlobalStyleProvider>
+              <CoreMenu />
+              {children}
+            </GlobalStyleProvider>
+          </ContextProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
