@@ -2,16 +2,16 @@ export const coreTabItems = [
   {
     id: 0,
     title: "Sprint's",
-    pageLink: "/Pages/sprints",
+    pageLink: "/page/sprints",
   },
   {
     id: 1,
     title: "Análises",
-    pageLink: "/Pages/analitics",
+    pageLink: "/page/analitics",
   },
   {
     id: 2,
     title: "Metas",
-    pageLink: "/Pages/goals",
+    pageLink: "/page/goals",
   },
 ];
