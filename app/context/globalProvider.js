@@ -9,7 +9,7 @@ export const GlobalContext = createContext();
 export const GlobalUpdateContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-  const [selectedTheme, setSelectedThemes] = useState(0);
+  const [selectedTheme] = useState(0);
   const [chosedMenuButton, setChosedMenuButton] = useState(0)
 
   const theme = themes[selectedTheme];
