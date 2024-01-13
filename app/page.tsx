@@ -1,5 +1,9 @@
-import Image from "next/image";
+import ModalTasks from "./components/Core/ModalTasks";
 
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <ModalTasks />
+    </main>
+  );
 }
