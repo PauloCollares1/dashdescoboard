@@ -14,3 +14,8 @@ model User {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   email String
 }
+
+model puxandoDoModelo {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  email String
+}
