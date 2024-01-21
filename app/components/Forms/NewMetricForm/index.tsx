@@ -14,18 +14,18 @@ const NewMetricForm = () => {
   return (
     <S.ModalForm>
       <S.GridContainer>
-        <S.GridItem>
-          <InsightsIcon fontSize="large" />
+        <S.GridItem md={12}>
+          <InsightsIcon fontSize="large" style={{ fontSize: "70px" }} />
         </S.GridItem>
 
-        <S.GridItem>Adicione uma nova métrica aqui</S.GridItem>
+        <S.GridItem md={12}>Adicione uma nova meta aqui</S.GridItem>
       </S.GridContainer>
 
       <S.GridItemDivider>
         <Divider color="white" variant="fullWidth" />
       </S.GridItemDivider>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form id="metricForm" onSubmit={handleSubmit(onSubmit)}>
         <S.GridContainer spacing={3}>
           <S.GridItem md={12}>
             <S.InputBox>Título da meta</S.InputBox>
@@ -52,18 +52,24 @@ const NewMetricForm = () => {
               {...register("dataFinalMeta")}
             />
           </S.GridItem>
-
-          <S.GridItem md={12}>
-            <S.GridItemDivider>
-              <Divider color="white" variant="fullWidth" />
-            </S.GridItemDivider>
-          </S.GridItem>
-
-          <S.GridItem md={12}>
-            <Button type="submit">Enviar</Button>
-          </S.GridItem>
         </S.GridContainer>
       </form>
+
+      <S.GridItemDivider>
+        <Divider color="white" variant="fullWidth" />
+      </S.GridItemDivider>
+
+      <S.GridContainer>
+        <S.GridItem md={6}>
+          <Button type="submit" form="metricForm">
+            Enviar
+          </Button>
+        </S.GridItem>
+
+        <S.GridItem md={6}>
+          <Button type="submit">Cancelar</Button>
+        </S.GridItem>
+      </S.GridContainer>
     </S.ModalForm>
   );
 };
