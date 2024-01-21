@@ -1,7 +1,6 @@
 import React from "react";
 import * as S from "./styles";
-import { Button, Divider, TextField } from "@mui/material";
-
+import { Button, Divider } from "@mui/material";
 import { InsightsIcon } from "@/app/utils/icons";
 import { useForm } from "react-hook-form";
 
@@ -27,37 +26,44 @@ const NewMetricForm = () => {
       </S.GridItemDivider>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <S.GridContainer>
-          <S.GridItem md={6}>
-            <TextField
-              label="Outlined"
-              variant="outlined"
-              size="small"
+        <S.GridContainer spacing={3}>
+          <S.GridItem md={12}>
+            <S.InputBox>Título da meta</S.InputBox>
+            <S.InputForm
+              placeholder="Ex: Atingir 98% de vend..."
               {...register("firstName")}
             />
           </S.GridItem>
 
-          <S.GridItem md={6}>
-            <TextField label="Outlined" variant="outlined" size="small" />
+          <S.GridItem md={12}>
+            <S.InputBox>Data da inicial da Meta</S.InputBox>
+            <S.InputForm
+              type="date"
+              placeholder="99/99/99"
+              {...register("dataInicialMeta")}
+            />
           </S.GridItem>
 
-          <S.GridItem md={6}>
-            <TextField label="Outlined" variant="outlined" size="small" />
+          <S.GridItem md={12}>
+            <S.InputBox>Data final da meta</S.InputBox>
+            <S.InputForm
+              placeholder="99/99/99"
+              type="date"
+              {...register("dataFinalMeta")}
+            />
           </S.GridItem>
 
-          <S.GridItem md={6}>
-            <TextField label="Outlined" variant="outlined" size="small" />
+          <S.GridItem md={12}>
+            <S.GridItemDivider>
+              <Divider color="white" variant="fullWidth" />
+            </S.GridItemDivider>
           </S.GridItem>
 
-          <S.GridItem>
+          <S.GridItem md={12}>
             <Button type="submit">Enviar</Button>
           </S.GridItem>
         </S.GridContainer>
       </form>
-
-      <S.GridItemDivider>
-        <Divider color="white" variant="fullWidth" />
-      </S.GridItemDivider>
     </S.ModalForm>
   );
 };

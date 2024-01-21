@@ -14,11 +14,20 @@ export const GridItem = styled(Grid).attrs({
 export const GridItemDivider = styled.div``;
 
 export const ModalForm = styled.div`
-  max-width: 40%;
+  max-width: 60%;
   margin-top: 5%;
   margin-left: 30%;
   margin-right: 30%;
   margin-bottom: 0%;
   border-radius: 1rem;
   background-color: #212121;
+`;
+
+export const InputBox = styled.div``;
+
+export const InputForm = styled.input`
+  color: black;
+  border-radius: 5px;
+  padding: 5px;
+  min-width: 80%;
 `;
