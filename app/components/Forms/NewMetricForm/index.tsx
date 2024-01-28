@@ -3,12 +3,19 @@ import * as S from "./styles";
 import { Button, Divider } from "@mui/material";
 import { InsightsIcon } from "@/app/utils/icons";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const NewMetricForm = () => {
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data: any) => {
+  const onSubmit = async (data: any) => {
     console.log(data);
+    const x = {
+      nomeMetrica: data.nomeMetrica,
+      dataInicialMeta: new Date(data.dataInicialMeta),
+      dataFinalMeta: new Date(data.dataFinalMeta),
+    };
+    const teste = await axios.post("/api/metrics", x);
   };
 
   return (
@@ -31,26 +38,18 @@ const NewMetricForm = () => {
             <S.InputBox>Título da meta</S.InputBox>
             <S.InputForm
               placeholder="Ex: Atingir 98% de vend..."
-              {...register("firstName")}
+              {...register("nomeMetrica")}
             />
           </S.GridItem>
 
           <S.GridItem md={12}>
             <S.InputBox>Data da inicial da Meta</S.InputBox>
-            <S.InputForm
-              type="date"
-              placeholder="99/99/99"
-              {...register("dataInicialMeta")}
-            />
+            <S.InputForm type="date" {...register("dataInicialMeta")} />
           </S.GridItem>
 
           <S.GridItem md={12}>
             <S.InputBox>Data final da meta</S.InputBox>
-            <S.InputForm
-              placeholder="99/99/99"
-              type="date"
-              {...register("dataFinalMeta")}
-            />
+            <S.InputForm type="date" {...register("dataFinalMeta")} />
           </S.GridItem>
         </S.GridContainer>
       </form>
