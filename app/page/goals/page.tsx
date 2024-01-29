@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Button, Divider } from "@mui/material";
 import { useGlobalState } from "@/app/hooks";
 import ModalTasks from "@/app/components/Core/ModalTasks";
@@ -7,8 +7,22 @@ import GenericModal from "@/app/components/Core/GenericModal";
 import * as S from "./styles";
 import { AddCircleIcon } from "@/app/utils/icons";
 import NewMetricForm from "@/app/components/Forms/NewMetricForm";
+import axios from "axios";
 
 const Goals = () => {
+  const [post, setPost] = useState([]);
+
+  const doido = async () => {
+    const x = await axios.get("/api/metrics").then((response) => {
+      setPost(response.data);
+    });
+    return x;
+  };
+
+  useEffect(() => {
+    doido();
+  }, []);
+
   const { setOpenCloseModal } = useGlobalState();
   return (
     <ModalTasks>
@@ -34,6 +48,16 @@ const Goals = () => {
       <GenericModal>
         <NewMetricForm />
       </GenericModal>
+
+      <div>aaaaaaaaaaa</div>
+
+      {post.map((item: any, index: any) => {
+        return (
+          <div key={index}>
+            <span>{item.nomeMetrica}</span>
+          </div>
+        );
+      })}
     </ModalTasks>
   );
 };

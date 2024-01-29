@@ -9,9 +9,8 @@ const NewMetricForm = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data: any) => {
-    console.log(data);
     const x = {
-      nomeMetrica: data.nomeMetrica,
+      ...data,
       dataInicialMeta: new Date(data.dataInicialMeta),
       dataFinalMeta: new Date(data.dataFinalMeta),
     };
